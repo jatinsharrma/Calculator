@@ -64,14 +64,6 @@ class MainActivity : AppCompatActivity() {
         temp1.setText("")
     }
 
-    fun onDecimalPoint(view : View){
-        if (lastNumeric && !lastDot) {
-            result.append(".")
-            lastNumeric = false
-            lastDot = true
-        }
-    }
-
     fun onEqual(view : View) {
         Equal = true
         if (parCount == 0 && stack.size != 0 && lastNumeric) {
@@ -185,8 +177,6 @@ class MainActivity : AppCompatActivity() {
 
         array2.add(res)
 
-        //println(array1.toString())
-        //println(array2.toString())
     }
 
     fun literals(new : String){
@@ -273,7 +263,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun remove(view : View) {
-        if (!Equal){
+        if (stack.size >0 && !Equal){
         var size = stack.size
         if (size > 0){
             var previous = stack[size-1]
@@ -333,7 +323,7 @@ class MainActivity : AppCompatActivity() {
             temp.text = stack.toString()
 
     }else{
-        Toast.makeText(this@MainActivity, "You can't edit result",Toast.LENGTH_SHORT).show()
+        Toast.makeText(this@MainActivity, "Wrong Action",Toast.LENGTH_SHORT).show()
     }
 
 
