@@ -8,6 +8,35 @@
     tools:context=".MainActivity"
     android:background="#1b1b1b">
 
+
+    <TextView
+        android:id="@+id/temp1"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="50dp"
+        android:background="#141414"
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        android:padding="10dp"
+        android:visibility="gone"
+        android:scrollbars="vertical"
+        android:gravity="bottom|right|center_vertical"
+        />
+
+    <TextView
+        android:id="@+id/temp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="50dp"
+        android:background="#141414"
+        android:textColor="#FFFFFF"
+        android:textSize="10sp"
+        android:maxLength="50"
+        android:padding="10dp"
+        android:visibility="gone"
+        android:gravity="bottom|right|center_vertical"
+        />
+
     <TextView
         android:id="@+id/result"
         android:layout_width="match_parent"
@@ -18,10 +47,69 @@
         android:textSize="30sp"
         android:maxLength="50"
         android:padding="10dp"
+        android:onClick="showHide"
         android:gravity="bottom|right|center_vertical"
         />
 
     <!-- Row 1 -->
+
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/btnclr"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="CLR"
+            android:textSize="20sp"
+            android:onClick="onClear"
+            android:textColor="#ffffff"
+            android:background="#1b1b1b"
+            />
+
+        <Button
+            android:id="@+id/backSpace"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="REM"
+            android:textSize="20sp"
+            android:onClick="remove"
+            android:textColor="#ffffff"
+            android:background="#1b1b1b"
+            />
+
+        <Button
+            android:id="@+id/leftBracket"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="("
+            android:textSize="20sp"
+            android:onClick="onDigit"
+            android:textColor="#ffffff"
+            android:background="#1b1b1b"
+            />
+
+        <Button
+            android:id="@+id/rightBracket"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text=")"
+            android:textSize="20sp"
+            android:onClick="onDigit"
+            android:textColor="#ffffff"
+            android:background="#1b1b1b"
+            />
+    </LinearLayout>
+
+    <!-- Row 2 -->
 
     <LinearLayout
         android:layout_height="wrap_content"
@@ -73,13 +161,13 @@
             android:layout_weight="1"
             android:text="/"
             android:textSize="20sp"
-            android:onClick="onOperator"
+            android:onClick="onDigit"
             android:textColor="#ffffff"
             android:background="#1b1b1b"
             />
     </LinearLayout>
 
-    <!-- Row 2 -->
+    <!-- Row 3 -->
 
     <LinearLayout
         android:layout_height="wrap_content"
@@ -131,13 +219,13 @@
             android:layout_weight="1"
             android:text="*"
             android:textSize="20sp"
-            android:onClick="onOperator"
+            android:onClick="onDigit"
             android:textColor="#ffffff"
             android:background="#1b1b1b"
             />
     </LinearLayout>
 
-    <!-- Row 3 -->
+    <!-- Row 4 -->
 
     <LinearLayout
         android:layout_height="wrap_content"
@@ -189,13 +277,13 @@
             android:layout_weight="1"
             android:text="-"
             android:textSize="20sp"
-            android:onClick="onOperator"
+            android:onClick="onDigit"
             android:textColor="#ffffff"
             android:background="#1b1b1b"
             />
     </LinearLayout>
 
-    <!-- Row 4 -->
+    <!-- Row 5 -->
 
     <LinearLayout
         android:layout_height="wrap_content"
@@ -211,7 +299,7 @@
             android:layout_weight="1"
             android:text="."
             android:textSize="20sp"
-            android:onClick="onDecimalPoint"
+            android:onClick="onDigit"
             android:textColor="#ffffff"
             android:background="#1b1b1b"
             />
@@ -229,41 +317,17 @@
             />
 
         <Button
-            android:id="@+id/btnclr"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="CLR"
-            android:textSize="20sp"
-            android:onClick="onClear"
-            android:textColor="#ffffff"
-            android:background="#1b1b1b"
-            />
-
-        <Button
             android:id="@+id/btnAdd"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:text="+"
             android:textSize="20sp"
-            android:onClick="onOperator"
+            android:onClick="onDigit"
             android:textColor="#ffffff"
             android:background="#1b1b1b"
             />
 
-
-
-    </LinearLayout>
-
-    <!-- Row 5 -->
-    
-    <LinearLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:orientation="horizontal"
-        >
         <Button
             android:id="@+id/btnequal"
             android:layout_width="0dp"
@@ -275,6 +339,7 @@
             android:textColor="#ffffff"
             android:background="#1b1b1b"
             />
+
     </LinearLayout>
 
 
