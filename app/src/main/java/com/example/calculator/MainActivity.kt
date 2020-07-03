@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
 
     fun onEqual(view : View) {
         Equal = true
-        if (parCount == 0 && stack.size != 0 && lastNumeric) {
+        if (parCount == 0 && stack.size != 0 && (lastNumeric || parFlag)) {
             var stack1 = ArrayList<String>()
             var stack2 = ArrayList<Double>()
             stack1.add("$")
