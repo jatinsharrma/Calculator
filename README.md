@@ -13,4 +13,4 @@
  </br>
  *Bugs* : </br>
     1. After clicking on "=" user is able to add operators.</br>
-    2. On click on REM will crash application if there is no input.</br>
+    2. <del>On click on REM will crash application if there is no input</del>.</br>
